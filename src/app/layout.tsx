@@ -1,6 +1,7 @@
 'use client'
 import { useEffect } from 'react'
 import Lenis from '@studio-freight/lenis'
+import "./globals.css";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
