@@ -75,7 +75,7 @@ const sections = [
     title: "Real-time Investment Updates", 
     number: "10", 
     bgColor: "linear-gradient(135deg, rgba(210, 136, 57, 0.8), rgba(147, 112, 219, 0.6))", 
-    video: "/videos/1.mp4"
+    video: "/videos/animal.mp4"
   },
 ];
 

@@ -59,7 +59,7 @@ export default function MenuOverlay({
             onClick={() => onNavigate(i)}
           >
             <video src={section.video} muted loop autoPlay playsInline />
-            <h3>{section.title}</h3>
+            <h3 className={styles.outline}>{section.title}</h3>
           </div>
         ))}
       </div>
