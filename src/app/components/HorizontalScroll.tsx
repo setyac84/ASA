@@ -12,7 +12,7 @@ const sections = [
     title: "Automated Expense Management", 
     number: "1",
     bgColor: "linear-gradient(135deg, rgba(147, 112, 219, 0.8), rgba(123, 104, 238, 0.6))",
-    video: "/videos/1.mp4"
+    video: "/videos/atom.mp4"
   },
   { 
     id: 2, 
