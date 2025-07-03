@@ -1,0 +1,227 @@
+.outerWrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.menuButton {
+  position: fixed;
+  top: 50%;
+  z-index: 100;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.menuButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.scrollContainer {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 100vh;
+  transition: all 0.5s ease;
+  position: relative; 
+  z-index: 1;         
+}
+
+.scrollContainer.menuOpen {
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+   display: none;
+}
+
+.section {
+  min-width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+
+.scrollContainer.menuOpen .section {
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+.section {
+  flex: 0 0 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #000);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+  z-index: 1;
+}
+
+.sectionImage {
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.section:hover .sectionImage {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px rgba(255,255,255,0.5));
+}
+
+.sectionVideo {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 4rem;
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.left, .center, .right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionContent:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sectionNumber {
+  font-size: 20vw;
+  font-weight: bold;
+  color: white;
+  opacity: 0.1;
+  font-family: 'Helvetica Neue', sans-serif;
+  text-align: left;
+}
+
+.sectionTitle {
+  font-size: 3vw;
+  font-weight: 600;
+  max-width: 400px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .sectionContent {
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .sectionNumber {
+    font-size: 15vw;
+    margin-bottom: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 6vw;
+  }
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollContainer {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.transformMenu{
+  position: fixed;
+  z-index: 1000;
+  transform: translate(650px, 65px);
+}
+
+.visualWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.glowLine {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(to right, #fff, #8e2de2, #4a00e0);
+  transform-origin: left;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.floatingDots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(white 2px, transparent 2px);
+  background-size: 20px 20px;
+  animation: floatDots 4s linear infinite;
+  opacity: 0.05;
+  z-index: 1;
+}
+
+@keyframes floatDots {
+  0% { background-position: 0 0; }
+  100% { background-position: 20px 20px; }
+}
